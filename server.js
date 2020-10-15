@@ -1,6 +1,6 @@
 const express = require('express')
 const app = express()
-const port = process.env.PORT || 8080
+const port = process.env.PORT || 3000
 
 if (process.env.NODE_ENV !== "production") {
   const chokidar = require("chokidar");

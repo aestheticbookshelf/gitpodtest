@@ -4,7 +4,8 @@
   "description": "gitpod test",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "sync": "browser-sync --proxy 'localhost:3000' start --files 'server/*.*' --no-ui"
   },
   "repository": {
     "type": "git",
@@ -21,6 +22,7 @@
     "express": "^4.17.1"
   },
   "devDependencies": {
+    "browser-sync": "^2.26.12",
     "chokidar": "^3.4.3"
   }
 }
