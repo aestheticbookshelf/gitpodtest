@@ -14,6 +14,11 @@
             "type": "npm",
             "script": "syncstatic",
             "problemMatcher": []
+        },
+        {
+            "type": "npm",
+            "script": "syncstaticpage",
+            "problemMatcher": []
         }
     ]
 }

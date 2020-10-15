@@ -7,7 +7,8 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "serve": "node server.js",
     "sync": "browser-sync --proxy 'localhost:3000' start --files 'server/*.*' --no-ui",
-    "syncstatic": "browser-sync --proxy 'localhost:3000' --startPath '/static' start --files 'server/*.*' --no-ui"
+    "syncstatic": "browser-sync --proxy 'localhost:3000' --startPath '/static' start --files 'server/*.*' --no-ui",
+    "syncstaticpage": "browser-sync start --server 'staticpage' --files 'staticpage'"
   },
   "repository": {
     "type": "git",
