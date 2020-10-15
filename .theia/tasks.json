@@ -1,0 +1,14 @@
+{
+    "tasks": [
+        {
+            "type": "npm",
+            "script": "serve",
+            "problemMatcher": []
+        },
+        {
+            "type": "npm",
+            "script": "sync",
+            "problemMatcher": []
+        }
+    ]
+}
