@@ -19,5 +19,8 @@
   "homepage": "https://github.com/aestheticbookshelf/gitpodtest#readme",
   "dependencies": {
     "express": "^4.17.1"
+  },
+  "devDependencies": {
+    "chokidar": "^3.4.3"
   }
 }
