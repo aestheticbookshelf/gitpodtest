@@ -6,7 +6,8 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "serve": "node server.js",
-    "sync": "browser-sync --proxy 'localhost:3000' start --files 'server/*.*' --no-ui"
+    "sync": "browser-sync --proxy 'localhost:3000' start --files 'server/*.*' --no-ui",
+    "syncstatic": "browser-sync --proxy 'localhost:3000' --startPath '/static' start --files 'server/*.*' --no-ui"
   },
   "repository": {
     "type": "git",

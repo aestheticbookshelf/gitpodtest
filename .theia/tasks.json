@@ -9,6 +9,11 @@
             "type": "npm",
             "script": "sync",
             "problemMatcher": []
+        },
+        {
+            "type": "npm",
+            "script": "syncstatic",
+            "problemMatcher": []
         }
     ]
 }
