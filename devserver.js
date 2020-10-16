@@ -1,7 +1,7 @@
 let process
 
 function spawnserver(){
-    process = require('child_process').spawn("node", ["server/server.js"])
+    process = require('child_process').spawn("node", ["server/server.js", "dev"])
 
     process.stdout.on('data', (data) => {    
         console.error(`stdout: ${data}`)
