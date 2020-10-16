@@ -39,15 +39,16 @@ app.get('/', (req, res) => {
     `)  
 })
 
+let devPublic
+
 app.listen(port, () => {
   console.log(`Example app listening at http://localhost:${port}`)
 
-  let devPublic = `http://localhost:${port}`
+  devPublic = `http://localhost:${port}`
 
   try{
     devPublic = require('child_process').execSync(`gp url ${port}`).toString().trim()
   }catch(err){}
   
-
-  console.log("devurl:" + devPublic)
+  console.log("dev public : " + devPublic)
 })
