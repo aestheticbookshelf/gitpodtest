@@ -25,7 +25,6 @@
     "express": "^4.17.1"
   },
   "devDependencies": {
-    "browser-sync": "^2.26.12",
     "chokidar": "^3.4.3",
     "open": "^7.3.0"
   }
