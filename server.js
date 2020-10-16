@@ -24,7 +24,9 @@ app.get('/static', (req, res) => {
   res.sendFile(path.join(__dirname, "server/static.html"))
 })
 
-app.listen(port, () => {
+require('reload')(app).then(rr_=>{
+
+    app.listen(port, () => {
   console.log(`Example app listening at http://localhost:${port}`)
 
   let devPublic = "http://localhost:3000"
@@ -36,4 +38,7 @@ app.listen(port, () => {
 
   console.log("url:" + devPublic)
 })
+
+})
+
 
