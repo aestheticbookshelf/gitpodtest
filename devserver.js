@@ -9,7 +9,7 @@ function spawnserver(){
     if(m=data.toString().match(/url:([^\s]*)/)){
         url = m[1]
         console.log("opening", url)
-        require('open')(url)
+        //require('open')(url)
     }
     });
 
