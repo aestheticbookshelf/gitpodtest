@@ -11,7 +11,7 @@ app.get('/stamp', (req, res) => {
     res.send(`${stamp}`)
 })
 
-let welcomeMessage = "Welcome !!"
+let welcomeMessage = "Welcome !"
 
 app.get('/', (req, res) => {
     res.send(`
@@ -28,18 +28,24 @@ app.get('/', (req, res) => {
                     fetch('/stamp').then(response=>response.text().then(content=>{                        
                         if(stamp){
                             if(content != stamp) setTimeout(_=>{                                
-                                if(!reloadStarted) setInterval(_=>{
-                                    fetch(document.location.href).then(response=>response.text().then(content=>{
-                                        if(!content.match(/Welcome/)){
-                                            console.log("reloading")
-                                            document.location.reload()
-                                        }                                        
-                                    }))
-                                }, 1000)                                
-                                reloadStarted = true
+                                if(!reloadStarted){
+                                    console.log("commence reload")
+                                    setInterval(_=>{
+                                        fetch(document.location.href).then(response=>response.text().then(content=>{
+                                            if(content.match(/Welcome/)){
+                                                console.log("reloading")
+                                                document.location.reload()
+                                            }                                        
+                                        }))
+                                    }, 1000)                                
+                                    reloadStarted = true
+                                }                                
                             }, 500)
                         }else{
-                            stamp = content
+                            if(!reloadStarted){
+                                stamp = content
+                                console.log("stamp set to", stamp)
+                            }
                         }
                     }))
                 }, 200)    
