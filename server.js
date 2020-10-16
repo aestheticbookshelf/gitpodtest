@@ -19,20 +19,19 @@ app.get('/', (req, res) => {
   <body>
     <h1>${require('./server/welcome.js').welcomeMessage()}</h1>
     <!-- All you have to do is include the reload script and have it be on every page of your project -->
-    <!-- You do not create this route, reload creates it for you automatically -->
-    <script src="/reload/reload.js"></script> 
+    <!-- You do not create this route, reload creates it for you automatically -->    
     <script>
     let stamp = null
     setInterval(_=>{
         fetch('/stamp').then(response=>response.text().then(content=>{
             console.log(content)
             if(stamp){
-                if(content != stamp) document.location.reload()
+                if(content != stamp) setTimeout(_=>document.location.reload(), 200)
             }else{
                 stamp = content
             }
         }))
-    }, 3000)    
+    }, 200)    
     </script>
   </body>
 </html>
