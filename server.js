@@ -14,7 +14,12 @@ app.get('/static', (req, res) => {
 app.listen(port, () => {
   console.log(`Example app listening at http://localhost:${port}`)
 
-  let devPublic = require('child_process').execSync(`gp url ${port}`).toString().trim()
+  let devPublic = "http://localhost:3000"
+
+  try{
+    devPublic = require('child_process').execSync(`gp url ${port}`).toString().trim()
+  }catch(err){}
+  
 
   console.log("url:" + devPublic)
 })
