@@ -1,3 +1,3 @@
 module.exports = {
-    welcomeMessage: _=>"Welcome !!"
+    welcomeMessage: _=>"Welcome !!!"
 }

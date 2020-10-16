@@ -26,6 +26,7 @@
   },
   "devDependencies": {
     "browser-sync": "^2.26.12",
-    "chokidar": "^3.4.3"
+    "chokidar": "^3.4.3",
+    "open": "^7.3.0"
   }
 }
