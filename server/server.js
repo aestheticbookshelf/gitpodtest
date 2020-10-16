@@ -11,7 +11,7 @@ app.get('/stamp', (req, res) => {
     res.send(`${stamp}`)
 })
 
-let welcomeMessage = "Welcome !"
+let welcomeMessage = "Welcome !!"
 
 app.get('/', (req, res) => {
     res.send(`
@@ -23,10 +23,21 @@ app.get('/', (req, res) => {
             <h1>${welcomeMessage}</h1>            
             <script>
                 let stamp = null
+                let reloadStarted = false
                 setInterval(_=>{
                     fetch('/stamp').then(response=>response.text().then(content=>{                        
                         if(stamp){
-                            if(content != stamp) setTimeout(_=>document.location.reload(), 500)
+                            if(content != stamp) setTimeout(_=>{                                
+                                if(!reloadStarted) setInterval(_=>{
+                                    fetch(document.location.href).then(response=>response.text().then(content=>{
+                                        if(!content.match(/Welcome/)){
+                                            console.log("reloading")
+                                            document.location.reload()
+                                        }                                        
+                                    }))
+                                }, 1000)                                
+                                reloadStarted = true
+                            }, 500)
                         }else{
                             stamp = content
                         }
